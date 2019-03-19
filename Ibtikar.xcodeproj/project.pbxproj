@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		374B746822415D3F00196ED0 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374B746722415D3F00196ED0 /* SplashViewController.swift */; };
+		374B746C22415D7D00196ED0 /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374B746B22415D7D00196ED0 /* SplashPresenter.swift */; };
+		374B746E22415D8C00196ED0 /* SplashService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374B746D22415D8C00196ED0 /* SplashService.swift */; };
 		393DDF812240E8AF00BA64E1 /* CompetitionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DDF802240E8AF00BA64E1 /* CompetitionCollectionViewCell.swift */; };
 		393DDF852240E93200BA64E1 /* CompetitionsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DDF842240E93200BA64E1 /* CompetitionsCollectionViewController.swift */; };
 		393DDF872240E94300BA64E1 /* CompetitionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DDF862240E94300BA64E1 /* CompetitionsPresenter.swift */; };
@@ -24,6 +27,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		374B746722415D3F00196ED0 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		374B746B22415D7D00196ED0 /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
+		374B746D22415D8C00196ED0 /* SplashService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashService.swift; sourceTree = "<group>"; };
 		393DDF802240E8AF00BA64E1 /* CompetitionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionCollectionViewCell.swift; sourceTree = "<group>"; };
 		393DDF842240E93200BA64E1 /* CompetitionsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionsCollectionViewController.swift; sourceTree = "<group>"; };
 		393DDF862240E94300BA64E1 /* CompetitionsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionsPresenter.swift; sourceTree = "<group>"; };
@@ -71,6 +77,16 @@
 				DAB9D874C8921CE00EF733F1 /* Pods-Ibtikar.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		374B746622415D2A00196ED0 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				374B746722415D3F00196ED0 /* SplashViewController.swift */,
+				374B746B22415D7D00196ED0 /* SplashPresenter.swift */,
+				374B746D22415D8C00196ED0 /* SplashService.swift */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 		393DDF822240E8FC00BA64E1 /* Competitions */ = {
@@ -148,6 +164,7 @@
 		39DAE7B62240E3B400A43945 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				374B746622415D2A00196ED0 /* Splash */,
 				393DDF822240E8FC00BA64E1 /* Competitions */,
 			);
 			path = Controller;
@@ -180,7 +197,6 @@
 				39DAE79B2240D19200A43945 /* Frameworks */,
 				39DAE79C2240D19200A43945 /* Resources */,
 				6CA7BEE2E044F250853C3220 /* [CP] Embed Pods Frameworks */,
-				4CBB305BC7405F1441AF698D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -238,21 +254,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4CBB305BC7405F1441AF698D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Ibtikar/Pods-Ibtikar-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		6CA7BEE2E044F250853C3220 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -308,6 +309,9 @@
 				393DDF892240E94E00BA64E1 /* CompetitionsService.swift in Sources */,
 				393DDF852240E93200BA64E1 /* CompetitionsCollectionViewController.swift in Sources */,
 				39DAE7BE2240E59A00A43945 /* ShowAlertUtility.swift in Sources */,
+				374B746822415D3F00196ED0 /* SplashViewController.swift in Sources */,
+				374B746E22415D8C00196ED0 /* SplashService.swift in Sources */,
+				374B746C22415D7D00196ED0 /* SplashPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
