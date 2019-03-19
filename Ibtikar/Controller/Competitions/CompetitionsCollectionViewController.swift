@@ -18,7 +18,10 @@ class CompetitionsCollectionViewController: UICollectionViewController,UICollect
         super.viewDidLoad()
         CompetitionsCV.delegate = self
         CompetitionsCV.dataSource = self
-
+        //refreshControl = UIRefreshControl()
+        
+        addSearchBar()
+   
     }
 
 
@@ -64,7 +67,29 @@ class CompetitionsCollectionViewController: UICollectionViewController,UICollect
     }
 
 
-
+    func addSearchBar() {
+        if #available(iOS 11.0, *) {
+            let sc = UISearchController(searchResultsController: nil)
+            //sc.delegate = self
+            let scb = sc.searchBar
+            scb.tintColor = UIColor.white
+            scb.barTintColor = UIColor.white
+            
+            if let textfield = scb.value(forKey: "searchField") as? UITextField {
+                textfield.textColor = UIColor.blue
+                if let backgroundview = textfield.subviews.first {
+                    // Background color
+                    backgroundview.backgroundColor = UIColor.white
+                    // Rounded corner
+                    backgroundview.layer.cornerRadius = 10;
+                    backgroundview.clipsToBounds = true;
+                }
+            }
+            
+            navigationItem.searchController = sc
+            navigationItem.hidesSearchBarWhenScrolling = true
+        }
+    }
     
     
 }
