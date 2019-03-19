@@ -8,20 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		39DAE7A22240D19200A43945 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DAE7A12240D19200A43945 /* AppDelegate.swift */; };
-		39DAE7A42240D19200A43945 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DAE7A32240D19200A43945 /* ViewController.swift */; };
 		39DAE7A72240D19200A43945 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39DAE7A52240D19200A43945 /* Main.storyboard */; };
 		39DAE7A92240D19400A43945 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39DAE7A82240D19400A43945 /* Assets.xcassets */; };
 		39DAE7AC2240D19400A43945 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39DAE7AA2240D19400A43945 /* LaunchScreen.storyboard */; };
+		39DAE7BC2240E4B400A43945 /* CheckInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DAE7BA2240E4B400A43945 /* CheckInternet.swift */; };
+		39DAE7BE2240E59A00A43945 /* ShowAlertUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DAE7BD2240E59A00A43945 /* ShowAlertUtility.swift */; };
+		39DAE7C02240E63C00A43945 /* ShadowUiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DAE7BF2240E63C00A43945 /* ShadowUiView.swift */; };
+		39DAE7C32240E66700A43945 /* RoundedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DAE7C12240E66700A43945 /* RoundedImage.swift */; };
+		39DAE7C42240E66700A43945 /* ShadowUicollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DAE7C22240E66700A43945 /* ShadowUicollectionCell.swift */; };
+		88E21AF0D441C33C75DD2A8A /* Pods_Ibtikar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D155F4B3E001D4A112B412 /* Pods_Ibtikar.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		39DAE79E2240D19200A43945 /* Ibtikar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ibtikar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39DAE7A12240D19200A43945 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		39DAE7A32240D19200A43945 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		39DAE7A62240D19200A43945 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		39DAE7A82240D19400A43945 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39DAE7AB2240D19400A43945 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		39DAE7AD2240D19400A43945 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39DAE7BA2240E4B400A43945 /* CheckInternet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInternet.swift; sourceTree = "<group>"; };
+		39DAE7BD2240E59A00A43945 /* ShowAlertUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAlertUtility.swift; sourceTree = "<group>"; };
+		39DAE7BF2240E63C00A43945 /* ShadowUiView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowUiView.swift; sourceTree = "<group>"; };
+		39DAE7C12240E66700A43945 /* RoundedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedImage.swift; sourceTree = "<group>"; };
+		39DAE7C22240E66700A43945 /* ShadowUicollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowUicollectionCell.swift; sourceTree = "<group>"; };
+		5E644CAF65C3CEBC485397CA /* Pods-Ibtikar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ibtikar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ibtikar/Pods-Ibtikar.debug.xcconfig"; sourceTree = "<group>"; };
+		92D155F4B3E001D4A112B412 /* Pods_Ibtikar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ibtikar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAB9D874C8921CE00EF733F1 /* Pods-Ibtikar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ibtikar.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ibtikar/Pods-Ibtikar.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +41,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88E21AF0D441C33C75DD2A8A /* Pods_Ibtikar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C25F23FD15C31DF31F7B317 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				92D155F4B3E001D4A112B412 /* Pods_Ibtikar.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2F46E072377AE36A08EFE82E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5E644CAF65C3CEBC485397CA /* Pods-Ibtikar.debug.xcconfig */,
+				DAB9D874C8921CE00EF733F1 /* Pods-Ibtikar.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		39DAE7952240D19200A43945 = {
 			isa = PBXGroup;
 			children = (
 				39DAE7A02240D19200A43945 /* Ibtikar */,
 				39DAE79F2240D19200A43945 /* Products */,
+				2F46E072377AE36A08EFE82E /* Pods */,
+				2C25F23FD15C31DF31F7B317 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +86,66 @@
 		39DAE7A02240D19200A43945 /* Ibtikar */ = {
 			isa = PBXGroup;
 			children = (
+				39DAE7B82240E3CF00A43945 /* Model */,
+				39DAE7B72240E3C800A43945 /* View */,
+				39DAE7B62240E3B400A43945 /* Controller */,
+				39DAE7B52240E3AC00A43945 /* Network */,
+				39DAE7B42240E39E00A43945 /* Utilities */,
+				39DAE7B32240E37600A43945 /* Custom */,
 				39DAE7A12240D19200A43945 /* AppDelegate.swift */,
-				39DAE7A32240D19200A43945 /* ViewController.swift */,
 				39DAE7A52240D19200A43945 /* Main.storyboard */,
 				39DAE7A82240D19400A43945 /* Assets.xcassets */,
 				39DAE7AA2240D19400A43945 /* LaunchScreen.storyboard */,
 				39DAE7AD2240D19400A43945 /* Info.plist */,
 			);
 			path = Ibtikar;
+			sourceTree = "<group>";
+		};
+		39DAE7B32240E37600A43945 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				39DAE7C12240E66700A43945 /* RoundedImage.swift */,
+				39DAE7C22240E66700A43945 /* ShadowUicollectionCell.swift */,
+				39DAE7BF2240E63C00A43945 /* ShadowUiView.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		39DAE7B42240E39E00A43945 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				39DAE7BA2240E4B400A43945 /* CheckInternet.swift */,
+				39DAE7BD2240E59A00A43945 /* ShowAlertUtility.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		39DAE7B52240E3AC00A43945 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		39DAE7B62240E3B400A43945 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		39DAE7B72240E3C800A43945 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		39DAE7B82240E3CF00A43945 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +155,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 39DAE7B02240D19400A43945 /* Build configuration list for PBXNativeTarget "Ibtikar" */;
 			buildPhases = (
+				F3C94CD3744D79B5E18096D9 /* [CP] Check Pods Manifest.lock */,
 				39DAE79A2240D19200A43945 /* Sources */,
 				39DAE79B2240D19200A43945 /* Frameworks */,
 				39DAE79C2240D19200A43945 /* Resources */,
+				6CA7BEE2E044F250853C3220 /* [CP] Embed Pods Frameworks */,
+				4CBB305BC7405F1441AF698D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,13 +217,73 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4CBB305BC7405F1441AF698D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Ibtikar/Pods-Ibtikar-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6CA7BEE2E044F250853C3220 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Ibtikar/Pods-Ibtikar-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Ibtikar/Pods-Ibtikar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3C94CD3744D79B5E18096D9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Ibtikar-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		39DAE79A2240D19200A43945 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39DAE7A42240D19200A43945 /* ViewController.swift in Sources */,
+				39DAE7C02240E63C00A43945 /* ShadowUiView.swift in Sources */,
+				39DAE7C42240E66700A43945 /* ShadowUicollectionCell.swift in Sources */,
 				39DAE7A22240D19200A43945 /* AppDelegate.swift in Sources */,
+				39DAE7C32240E66700A43945 /* RoundedImage.swift in Sources */,
+				39DAE7BC2240E4B400A43945 /* CheckInternet.swift in Sources */,
+				39DAE7BE2240E59A00A43945 /* ShowAlertUtility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,15 +427,14 @@
 		};
 		39DAE7B12240D19400A43945 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E644CAF65C3CEBC485397CA /* Pods-Ibtikar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D3PN8KR6TH;
 				INFOPLIST_FILE = Ibtikar/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.as.task.Ibtikar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -298,15 +444,14 @@
 		};
 		39DAE7B22240D19400A43945 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DAB9D874C8921CE00EF733F1 /* Pods-Ibtikar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D3PN8KR6TH;
 				INFOPLIST_FILE = Ibtikar/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.as.task.Ibtikar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
