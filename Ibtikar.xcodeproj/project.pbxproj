@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		393DDF812240E8AF00BA64E1 /* CompetitionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DDF802240E8AF00BA64E1 /* CompetitionCollectionViewCell.swift */; };
+		393DDF852240E93200BA64E1 /* CompetitionsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DDF842240E93200BA64E1 /* CompetitionsCollectionViewController.swift */; };
+		393DDF872240E94300BA64E1 /* CompetitionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DDF862240E94300BA64E1 /* CompetitionsPresenter.swift */; };
+		393DDF892240E94E00BA64E1 /* CompetitionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DDF882240E94E00BA64E1 /* CompetitionsService.swift */; };
 		39DAE7A22240D19200A43945 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DAE7A12240D19200A43945 /* AppDelegate.swift */; };
 		39DAE7A72240D19200A43945 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39DAE7A52240D19200A43945 /* Main.storyboard */; };
 		39DAE7A92240D19400A43945 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39DAE7A82240D19400A43945 /* Assets.xcassets */; };
@@ -20,6 +24,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		393DDF802240E8AF00BA64E1 /* CompetitionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionCollectionViewCell.swift; sourceTree = "<group>"; };
+		393DDF842240E93200BA64E1 /* CompetitionsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionsCollectionViewController.swift; sourceTree = "<group>"; };
+		393DDF862240E94300BA64E1 /* CompetitionsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionsPresenter.swift; sourceTree = "<group>"; };
+		393DDF882240E94E00BA64E1 /* CompetitionsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionsService.swift; sourceTree = "<group>"; };
 		39DAE79E2240D19200A43945 /* Ibtikar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ibtikar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39DAE7A12240D19200A43945 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39DAE7A62240D19200A43945 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -63,6 +71,16 @@
 				DAB9D874C8921CE00EF733F1 /* Pods-Ibtikar.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		393DDF822240E8FC00BA64E1 /* Competitions */ = {
+			isa = PBXGroup;
+			children = (
+				393DDF842240E93200BA64E1 /* CompetitionsCollectionViewController.swift */,
+				393DDF862240E94300BA64E1 /* CompetitionsPresenter.swift */,
+				393DDF882240E94E00BA64E1 /* CompetitionsService.swift */,
+			);
+			path = Competitions;
 			sourceTree = "<group>";
 		};
 		39DAE7952240D19200A43945 = {
@@ -130,6 +148,7 @@
 		39DAE7B62240E3B400A43945 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				393DDF822240E8FC00BA64E1 /* Competitions */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -137,6 +156,7 @@
 		39DAE7B72240E3C800A43945 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				393DDF802240E8AF00BA64E1 /* CompetitionCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -282,7 +302,11 @@
 				39DAE7C42240E66700A43945 /* ShadowUicollectionCell.swift in Sources */,
 				39DAE7A22240D19200A43945 /* AppDelegate.swift in Sources */,
 				39DAE7C32240E66700A43945 /* RoundedImage.swift in Sources */,
+				393DDF812240E8AF00BA64E1 /* CompetitionCollectionViewCell.swift in Sources */,
 				39DAE7BC2240E4B400A43945 /* CheckInternet.swift in Sources */,
+				393DDF872240E94300BA64E1 /* CompetitionsPresenter.swift in Sources */,
+				393DDF892240E94E00BA64E1 /* CompetitionsService.swift in Sources */,
+				393DDF852240E93200BA64E1 /* CompetitionsCollectionViewController.swift in Sources */,
 				39DAE7BE2240E59A00A43945 /* ShowAlertUtility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -434,7 +458,10 @@
 				DEVELOPMENT_TEAM = D3PN8KR6TH;
 				INFOPLIST_FILE = Ibtikar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.as.task.Ibtikar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -451,7 +478,10 @@
 				DEVELOPMENT_TEAM = D3PN8KR6TH;
 				INFOPLIST_FILE = Ibtikar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.as.task.Ibtikar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

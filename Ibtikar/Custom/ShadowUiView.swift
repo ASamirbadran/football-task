@@ -7,7 +7,7 @@
 //
 
 import UIKit
-extension UIPickerView {
+extension UIView {
     func UiViewShadow() {
         self.layer.shadowColor = UIColor.black.cgColor
 

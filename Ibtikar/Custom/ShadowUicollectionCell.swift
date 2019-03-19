@@ -19,6 +19,10 @@ extension UICollectionViewCell {
         self.layer.cornerRadius = 10
         self.layer.shadowOffset = CGSize.zero
         self.layer.shadowRadius = 8
+        self.layer.borderColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.12).cgColor
+        self.layer.borderWidth = 1
+
+      
         
     }
     
