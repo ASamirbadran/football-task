@@ -15,12 +15,19 @@ class CompetitionsCollectionViewController: UICollectionViewController,UICollect
     var refreshControl = UIRefreshControl()
     var sentCompCVData : CompetitionsList?
 
+    fileprivate let competitionsPresenter = CompetitionsPresenter(_competitionsService: CompetitionsService())
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         CompetitionsCV.delegate = self
         CompetitionsCV.dataSource = self
         //refreshControl = UIRefreshControl()
         addSearchBar()
+        competitionsPresenter.attachView(self)
+        
+
+
    
     }
 
@@ -67,9 +74,21 @@ class CompetitionsCollectionViewController: UICollectionViewController,UICollect
         let row = indexPath.row
         let DesiredCompetition = sentCompCVData?.competitions?[row]
         cell.decorate(for: DesiredCompetition, in: self)
+        if(allowedComIds.contains(DesiredCompetition?.id ?? 0)){
+            cell.compName.textColor = UIColor.green
         
+        }else{
+            cell.compName.textColor = UIColor.red
+
+        }
     
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.row)
+        self.performSegue(withIdentifier: "moveToMatchScreen", sender: indexPath.row)
+
     }
 
 
@@ -96,6 +115,29 @@ class CompetitionsCollectionViewController: UICollectionViewController,UICollect
             navigationItem.hidesSearchBarWhenScrolling = true
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "moveToMatchScreen") {
+            if let CompMatch = segue.destination as? MatchesTableViewController {
+                
+//                if let button:UIButton = sender as! UIButton? {
+//                    let valueToPass = ActiveMissionList[button.tag]
+//                    MissionDetails.valueActivePassed = valueToPass
+//                    MissionDetails.isActive = true
+//                }
+                
+            }
+            
+        }
+        
+    }
+    
+    
+}
+
+
+extension CompetitionsCollectionViewController : CompetitionsView{
+
     
     
 }

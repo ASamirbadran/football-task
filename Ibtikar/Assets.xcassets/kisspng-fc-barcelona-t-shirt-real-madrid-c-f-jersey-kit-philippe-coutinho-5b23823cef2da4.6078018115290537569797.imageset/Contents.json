@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "idiom" : "universal",
+      "filename" : "kisspng-fc-barcelona-t-shirt-real-madrid-c-f-jersey-kit-philippe-coutinho-5b23823cef2da4.6078018115290537569797.png",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "kisspng-fc-barcelona-t-shirt-real-madrid-c-f-jersey-kit-philippe-coutinho-5b23823cef2da4.6078018115290537569797@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "kisspng-fc-barcelona-t-shirt-real-madrid-c-f-jersey-kit-philippe-coutinho-5b23823cef2da4.6078018115290537569797@3x.png",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}

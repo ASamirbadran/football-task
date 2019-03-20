@@ -58,7 +58,7 @@ extension SplashViewController: SplashView {
 
     }
     
-    func openHomeScreen(filteredData: CompetitionsList?) {
+    func openHomeScreen(downloadedData : CompetitionsList?) {
            downloadedCompCVData = downloadedData
             self.performSegue(withIdentifier: "SplashToHome", sender: self)
     }

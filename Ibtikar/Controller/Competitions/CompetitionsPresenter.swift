@@ -7,3 +7,28 @@
 //
 
 import Foundation
+protocol CompetitionsView: NSObjectProtocol {
+ 
+}
+
+
+class CompetitionsPresenter {
+    fileprivate let competitionsService:CompetitionsService
+    weak fileprivate var competitionsview : CompetitionsView?
+    
+    
+    init(_competitionsService:CompetitionsService){
+        self.competitionsService = _competitionsService
+    }
+    
+    func attachView(_ view:CompetitionsView){
+        competitionsview = view
+    }
+    
+    func detachView() {
+        competitionsview = nil
+    }
+    
+        
+
+}

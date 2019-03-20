@@ -16,6 +16,11 @@
 		374E8115224254CC005004BC /* Competitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374E8114224254CC005004BC /* Competitions.swift */; };
 		374E8117224254E2005004BC /* CurrentSeason.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374E8116224254E2005004BC /* CurrentSeason.swift */; };
 		374E811922425530005004BC /* CompetitionsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374E811822425530005004BC /* CompetitionsList.swift */; };
+		374E812222429024005004BC /* MatchesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374E812122429024005004BC /* MatchesTableViewController.swift */; };
+		374E812422429044005004BC /* MatchesScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374E812322429044005004BC /* MatchesScreenPresenter.swift */; };
+		374E812622429052005004BC /* MatchesScreenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374E812522429052005004BC /* MatchesScreenService.swift */; };
+		374E81282242985D005004BC /* MatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374E81272242985D005004BC /* MatchTableViewCell.swift */; };
+		374E812C2242A6C1005004BC /* TableViewShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374E812B2242A6C1005004BC /* TableViewShadow.swift */; };
 		393DDF812240E8AF00BA64E1 /* CompetitionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DDF802240E8AF00BA64E1 /* CompetitionCollectionViewCell.swift */; };
 		393DDF852240E93200BA64E1 /* CompetitionsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DDF842240E93200BA64E1 /* CompetitionsCollectionViewController.swift */; };
 		393DDF872240E94300BA64E1 /* CompetitionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DDF862240E94300BA64E1 /* CompetitionsPresenter.swift */; };
@@ -42,6 +47,11 @@
 		374E8114224254CC005004BC /* Competitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Competitions.swift; path = Ibtikar/Model/Competitions.swift; sourceTree = SOURCE_ROOT; };
 		374E8116224254E2005004BC /* CurrentSeason.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CurrentSeason.swift; path = Ibtikar/Model/CurrentSeason.swift; sourceTree = SOURCE_ROOT; };
 		374E811822425530005004BC /* CompetitionsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CompetitionsList.swift; path = Ibtikar/Model/CompetitionsList.swift; sourceTree = SOURCE_ROOT; };
+		374E812122429024005004BC /* MatchesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesTableViewController.swift; sourceTree = "<group>"; };
+		374E812322429044005004BC /* MatchesScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesScreenPresenter.swift; sourceTree = "<group>"; };
+		374E812522429052005004BC /* MatchesScreenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesScreenService.swift; sourceTree = "<group>"; };
+		374E81272242985D005004BC /* MatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTableViewCell.swift; sourceTree = "<group>"; };
+		374E812B2242A6C1005004BC /* TableViewShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewShadow.swift; sourceTree = "<group>"; };
 		393DDF802240E8AF00BA64E1 /* CompetitionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionCollectionViewCell.swift; sourceTree = "<group>"; };
 		393DDF842240E93200BA64E1 /* CompetitionsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionsCollectionViewController.swift; sourceTree = "<group>"; };
 		393DDF862240E94300BA64E1 /* CompetitionsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionsPresenter.swift; sourceTree = "<group>"; };
@@ -121,6 +131,16 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		374E812022428FFF005004BC /* Matches */ = {
+			isa = PBXGroup;
+			children = (
+				374E812122429024005004BC /* MatchesTableViewController.swift */,
+				374E812322429044005004BC /* MatchesScreenPresenter.swift */,
+				374E812522429052005004BC /* MatchesScreenService.swift */,
+			);
+			path = Matches;
+			sourceTree = "<group>";
+		};
 		393DDF822240E8FC00BA64E1 /* Competitions */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +193,7 @@
 				39DAE7C12240E66700A43945 /* RoundedImage.swift */,
 				39DAE7C22240E66700A43945 /* ShadowUicollectionCell.swift */,
 				39DAE7BF2240E63C00A43945 /* ShadowUiView.swift */,
+				374E812B2242A6C1005004BC /* TableViewShadow.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -189,6 +210,7 @@
 		39DAE7B62240E3B400A43945 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				374E812022428FFF005004BC /* Matches */,
 				374B746622415D2A00196ED0 /* Splash */,
 				393DDF822240E8FC00BA64E1 /* Competitions */,
 			);
@@ -199,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				393DDF802240E8AF00BA64E1 /* CompetitionCollectionViewCell.swift */,
+				374E81272242985D005004BC /* MatchTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -324,10 +347,13 @@
 				374E811922425530005004BC /* CompetitionsList.swift in Sources */,
 				39DAE7C02240E63C00A43945 /* ShadowUiView.swift in Sources */,
 				39DAE7C42240E66700A43945 /* ShadowUicollectionCell.swift in Sources */,
+				374E81282242985D005004BC /* MatchTableViewCell.swift in Sources */,
 				374E8117224254E2005004BC /* CurrentSeason.swift in Sources */,
 				39DAE7A22240D19200A43945 /* AppDelegate.swift in Sources */,
+				374E812422429044005004BC /* MatchesScreenPresenter.swift in Sources */,
 				374E810F22423AC6005004BC /* UrlManager.swift in Sources */,
 				39DAE7C32240E66700A43945 /* RoundedImage.swift in Sources */,
+				374E812C2242A6C1005004BC /* TableViewShadow.swift in Sources */,
 				393DDF812240E8AF00BA64E1 /* CompetitionCollectionViewCell.swift in Sources */,
 				39DAE7BC2240E4B400A43945 /* CheckInternet.swift in Sources */,
 				393DDF872240E94300BA64E1 /* CompetitionsPresenter.swift in Sources */,
@@ -335,11 +361,13 @@
 				393DDF852240E93200BA64E1 /* CompetitionsCollectionViewController.swift in Sources */,
 				374E8115224254CC005004BC /* Competitions.swift in Sources */,
 				39DAE7BE2240E59A00A43945 /* ShowAlertUtility.swift in Sources */,
+				374E812222429024005004BC /* MatchesTableViewController.swift in Sources */,
 				374B746822415D3F00196ED0 /* SplashViewController.swift in Sources */,
 				374E810D2242379C005004BC /* Constants.swift in Sources */,
 				374B746E22415D8C00196ED0 /* SplashService.swift in Sources */,
 				374E8113224254B7005004BC /* Area.swift in Sources */,
 				374B746C22415D7D00196ED0 /* SplashPresenter.swift in Sources */,
+				374E812622429052005004BC /* MatchesScreenService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

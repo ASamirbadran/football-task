@@ -21,6 +21,9 @@ class CompetitionCollectionViewCell: UICollectionViewCell {
 
 
     }
+    
+    
+    
     //
     func decorate(for compCell : Competitions?, in controller: CompetitionsCollectionViewController) {
         let name =  compCell?.name ?? ""
@@ -28,7 +31,7 @@ class CompetitionCollectionViewCell: UICollectionViewCell {
         let startDate = compCell?.currentSeason?.startDate ?? ""
         let endDate = compCell?.currentSeason?.endDate ?? ""
         
-        
+     
         
         self.compName.text = name
         self.compStrDate.text = startDate
