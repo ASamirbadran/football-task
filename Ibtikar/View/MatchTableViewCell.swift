@@ -25,7 +25,27 @@ class MatchTableViewCell: UITableViewCell {
   
     
     
+    //
+    func decorate(for matchCell : Matches?, in controller: MatchesTableViewController) {
+        let _groupName =  matchCell?.group ?? ""
+        let _FirstTeam = matchCell?.homeTeam?.name ?? ""
+        let _MatchScoreFirstTeam = matchCell?.score?.fullTime?.homeTeam ?? 0
+        let _MatchScoreSecondTeam = matchCell?.score?.fullTime?.awayTeam ?? 0
+        let _SecondTeam = matchCell?.awayTeam?.name ?? ""
+        let _MatchStatus = matchCell?.status ?? ""
+        
+        
+        
+        self.groupName.text = _groupName
+        self.FirstTeam.text = _FirstTeam
+        self.MatchScore.text = "\(_MatchScoreFirstTeam) - \(_MatchScoreSecondTeam)"
+        self.MatchStatus.text = _MatchStatus
+        self.SecondTeam.text = _SecondTeam
 
+        
+        
+    }
+    
   
 
 }

@@ -7,4 +7,5 @@
 //
 
 import Foundation
-let competitionUrl = "\(BaseUrl)/BusinessUintContract/GetHospitalData?countryId=";
+let competitionUrl = "\(BaseUrl)competitions/";
+
