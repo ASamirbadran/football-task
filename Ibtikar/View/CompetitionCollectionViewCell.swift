@@ -33,7 +33,6 @@ class CompetitionCollectionViewCell: UICollectionViewCell {
         self.compName.text = name
         self.compStrDate.text = startDate
         self.CompEndDate.text = endDate
-
         self.compLocation.text = location
         
 

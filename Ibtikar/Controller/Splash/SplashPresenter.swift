@@ -9,7 +9,7 @@
 import Foundation
 
 protocol SplashView: NSObjectProtocol {
-    func openHomeScreen(downloadedData : CompetitionsList?)
+    func openHomeScreen(filteredData : CompetitionsList?)
     func startLoading()
     func showAlert(_message: String)
     func showRetryAlert(_message: String)
@@ -42,7 +42,8 @@ class SplashPresenter {
             SplashConfigService.DownloadCompListData() {
                 if (self.SplashConfigService.errorInresponse == false){
                     if self.SplashConfigService.emptyInresponse == false{
-                        self.splashview?.openHomeScreen(downloadedData: self.SplashConfigService.compData)
+                        //filtering date for authorized ids only (free plan limitation)
+                        self.splashview?.openHomeScreen(filteredData: self.SplashConfigService.compData)
                         //print("test is   : \(self.SplashConfigService.compData)")
                         self.splashview?.stopLoading()
                     }else{

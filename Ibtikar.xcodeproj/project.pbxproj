@@ -36,12 +36,12 @@
 		374B746722415D3F00196ED0 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		374B746B22415D7D00196ED0 /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
 		374B746D22415D8C00196ED0 /* SplashService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashService.swift; sourceTree = "<group>"; };
-		374E810C2242379C005004BC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Ibtikar/Controller/Splash/Constants.swift; sourceTree = SOURCE_ROOT; };
-		374E810E22423AC6005004BC /* UrlManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UrlManager.swift; path = Ibtikar/Controller/Splash/UrlManager.swift; sourceTree = SOURCE_ROOT; };
-		374E8112224254B7005004BC /* Area.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Area.swift; path = Ibtikar/Controller/Splash/Area.swift; sourceTree = SOURCE_ROOT; };
-		374E8114224254CC005004BC /* Competitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Competitions.swift; path = Ibtikar/Controller/Splash/Competitions.swift; sourceTree = SOURCE_ROOT; };
-		374E8116224254E2005004BC /* CurrentSeason.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CurrentSeason.swift; path = Ibtikar/Controller/Splash/CurrentSeason.swift; sourceTree = SOURCE_ROOT; };
-		374E811822425530005004BC /* CompetitionsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CompetitionsList.swift; path = Ibtikar/Controller/Splash/CompetitionsList.swift; sourceTree = SOURCE_ROOT; };
+		374E810C2242379C005004BC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Ibtikar/Model/Constants.swift; sourceTree = SOURCE_ROOT; };
+		374E810E22423AC6005004BC /* UrlManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UrlManager.swift; path = Ibtikar/Network/UrlManager.swift; sourceTree = SOURCE_ROOT; };
+		374E8112224254B7005004BC /* Area.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Area.swift; path = Ibtikar/Model/Area.swift; sourceTree = SOURCE_ROOT; };
+		374E8114224254CC005004BC /* Competitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Competitions.swift; path = Ibtikar/Model/Competitions.swift; sourceTree = SOURCE_ROOT; };
+		374E8116224254E2005004BC /* CurrentSeason.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CurrentSeason.swift; path = Ibtikar/Model/CurrentSeason.swift; sourceTree = SOURCE_ROOT; };
+		374E811822425530005004BC /* CompetitionsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CompetitionsList.swift; path = Ibtikar/Model/CompetitionsList.swift; sourceTree = SOURCE_ROOT; };
 		393DDF802240E8AF00BA64E1 /* CompetitionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionCollectionViewCell.swift; sourceTree = "<group>"; };
 		393DDF842240E93200BA64E1 /* CompetitionsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionsCollectionViewController.swift; sourceTree = "<group>"; };
 		393DDF862240E94300BA64E1 /* CompetitionsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionsPresenter.swift; sourceTree = "<group>"; };
@@ -101,6 +101,26 @@
 			path = Splash;
 			sourceTree = "<group>";
 		};
+		374E811E2242748A005004BC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				374E810C2242379C005004BC /* Constants.swift */,
+				374E8112224254B7005004BC /* Area.swift */,
+				374E8114224254CC005004BC /* Competitions.swift */,
+				374E8116224254E2005004BC /* CurrentSeason.swift */,
+				374E811822425530005004BC /* CompetitionsList.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		374E811F224274A8005004BC /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				374E810E22423AC6005004BC /* UrlManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		393DDF822240E8FC00BA64E1 /* Competitions */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,10 +152,10 @@
 		39DAE7A02240D19200A43945 /* Ibtikar */ = {
 			isa = PBXGroup;
 			children = (
-				39DAE7B82240E3CF00A43945 /* Model */,
+				374E811F224274A8005004BC /* Network */,
+				374E811E2242748A005004BC /* Model */,
 				39DAE7B72240E3C800A43945 /* View */,
 				39DAE7B62240E3B400A43945 /* Controller */,
-				39DAE7B52240E3AC00A43945 /* Network */,
 				39DAE7B42240E39E00A43945 /* Utilities */,
 				39DAE7B32240E37600A43945 /* Custom */,
 				39DAE7A12240D19200A43945 /* AppDelegate.swift */,
@@ -166,14 +186,6 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		39DAE7B52240E3AC00A43945 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				374E810E22423AC6005004BC /* UrlManager.swift */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
 		39DAE7B62240E3B400A43945 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,18 +201,6 @@
 				393DDF802240E8AF00BA64E1 /* CompetitionCollectionViewCell.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		39DAE7B82240E3CF00A43945 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				374E810C2242379C005004BC /* Constants.swift */,
-				374E8112224254B7005004BC /* Area.swift */,
-				374E8114224254CC005004BC /* Competitions.swift */,
-				374E8116224254E2005004BC /* CurrentSeason.swift */,
-				374E811822425530005004BC /* CompetitionsList.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
