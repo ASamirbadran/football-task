@@ -9,6 +9,11 @@
 import UIKit
 
 class CompetitionCollectionViewCell: UICollectionViewCell {
+    
+    @IBOutlet weak var compLocation: UILabel!
+    @IBOutlet weak var compName: UILabel!
+    @IBOutlet weak var compStrDate: UILabel!
+    @IBOutlet weak var CompEndDate: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         self.UiCollectionViewShadow()
@@ -16,6 +21,26 @@ class CompetitionCollectionViewCell: UICollectionViewCell {
 
 
     }
+    //
+    func decorate(for compCell : Competitions?, in controller: CompetitionsCollectionViewController) {
+        let name =  compCell?.name ?? ""
+        let location = compCell?.area?.name ?? ""
+        let startDate = compCell?.currentSeason?.startDate ?? ""
+        let endDate = compCell?.currentSeason?.endDate ?? ""
+        
+        
+        
+        self.compName.text = name
+        self.compStrDate.text = startDate
+        self.CompEndDate.text = endDate
+
+        self.compLocation.text = location
+        
+
+    }
+    
+    
+}
+
     
  
-}

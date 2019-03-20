@@ -13,13 +13,13 @@ class CompetitionsCollectionViewController: UICollectionViewController,UICollect
     @IBOutlet var CompetitionsCV: UICollectionView!
     let searchController = UISearchController(searchResultsController: nil)
     var refreshControl = UIRefreshControl()
-    
+    var sentCompCVData : CompetitionsList?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         CompetitionsCV.delegate = self
         CompetitionsCV.dataSource = self
         //refreshControl = UIRefreshControl()
-        
         addSearchBar()
    
     }
@@ -58,11 +58,17 @@ class CompetitionsCollectionViewController: UICollectionViewController,UICollect
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return sentCompCVData?.competitions?.count ?? 0
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "compititionCellId", for: indexPath) as! CompetitionCollectionViewCell
+
+        let row = indexPath.row
+        let DesiredCompetition = sentCompCVData?.competitions?[row]
+        cell.decorate(for: DesiredCompetition, in: self)
+        
+    
         return cell
     }
 

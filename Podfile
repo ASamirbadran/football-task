@@ -8,5 +8,7 @@ target 'Ibtikar' do
   # Pods for Ibtikar
 	pod 'Alamofire'
     pod 'NVActivityIndicatorView'
+    pod 'AlamofireObjectMapper'
+
 
 end
