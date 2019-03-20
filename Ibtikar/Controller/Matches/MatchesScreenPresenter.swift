@@ -35,11 +35,14 @@ class MatchesScreenPresenter {
     }
     
     
-    func getMatchList()   {
+    
+    
+    
+    func getMatchList(_compId : Int , _season : String)   {
         if(CheckInternet.isConnectedToInternet()){
             self.matchesScreenView?.startLoading()
             
-            matchesScreenService.DownloadMatchListData(compId: 2000, season: "2018") {
+            matchesScreenService.DownloadMatchListData(compId: _compId, season:CusDateFormat.TrimDate(date: _season)) {
                 if (self.matchesScreenService.errorInresponse == false){
                     if self.matchesScreenService.emptyInresponse == false{
                         self.matchesScreenView?.updateMatchTableData(matchData: self.matchesScreenService.MatchListData)
@@ -62,6 +65,6 @@ class MatchesScreenPresenter {
         
     }
     
-    
+
     
 }

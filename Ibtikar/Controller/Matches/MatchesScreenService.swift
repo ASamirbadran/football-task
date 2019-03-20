@@ -18,7 +18,7 @@ class MatchesScreenService {
         
         let Matchurl = BuildServiceUrl.buildMatchesUrl(competitionId: compId, season: season)
         let headers    = [ "X-Auth-Token" : Token ]
-        
+        print("MatchUrl : \(Matchurl)")
         Alamofire.request(Matchurl, headers: headers).responseObject { (response: DataResponse<MatchList>) in
 
             switch (response.result){
@@ -32,6 +32,7 @@ class MatchesScreenService {
                 self.MatchListData = matchesResponse
                 if(self.MatchListData?.matches?.count == 0){
                     self.emptyInresponse = true
+                    print("empty")
                 }
             }
             

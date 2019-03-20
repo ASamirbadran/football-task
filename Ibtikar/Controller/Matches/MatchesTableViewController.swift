@@ -15,6 +15,8 @@ class MatchesTableViewController: UITableViewController {
     var downloadedMatchCVData : MatchList?
     var activityIndicatorView: UIActivityIndicatorView!
 
+    var CompetitionId : Int!
+    var LatestSeasonByYear : String!
     override func viewDidLoad() {
         super.viewDidLoad()
         MatchTableView.delegate = self
@@ -22,7 +24,7 @@ class MatchesTableViewController: UITableViewController {
         MatchTableView.rowHeight = 170
         
         MatchPresenter.attachView(self)
-        MatchPresenter.getMatchList()
+        MatchPresenter.getMatchList(_compId: CompetitionId, _season: LatestSeasonByYear)
         
        
 
@@ -55,6 +57,10 @@ class MatchesTableViewController: UITableViewController {
     }
 
    
+    
+    
+    
+    
 
    
 
@@ -71,17 +77,20 @@ extension MatchesTableViewController : MatchesScreenView {
         activityIndicatorView.startAnimating()
     }
     
-    func showAlert(_message: String) {
-        
-    }
-    
-    func showRetryAlert(_message: String) {
-        
-    }
+
     
     func stopLoading() {
         activityIndicatorView.stopAnimating()
     }
     
+    func showAlert(_message: String) {
+        ShowAlertUtility.DisplayAlert(title: "Error", message: _message, in: self)
+        
+    }
+    
+    func showRetryAlert(_message: String) {
+        ShowAlertUtility.DisplayRetryAlert(title: "Error", message: _message, in: self)
+        
+    }
     
 }

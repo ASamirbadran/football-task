@@ -34,12 +34,13 @@ class CompetitionCollectionViewCell: UICollectionViewCell {
      
         
         self.compName.text = name
-        self.compStrDate.text = startDate
-        self.CompEndDate.text = endDate
+        self.compStrDate.text = CusDateFormat.ChangeDateFormat(date: startDate)
+        self.CompEndDate.text = CusDateFormat.ChangeDateFormat(date: endDate)
         self.compLocation.text = location
         
 
     }
+    
     
     
 }

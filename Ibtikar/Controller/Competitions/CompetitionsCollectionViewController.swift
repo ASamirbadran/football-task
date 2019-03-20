@@ -119,12 +119,14 @@ class CompetitionsCollectionViewController: UICollectionViewController,UICollect
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "moveToMatchScreen") {
             if let CompMatch = segue.destination as? MatchesTableViewController {
-                
-//                if let button:UIButton = sender as! UIButton? {
-//                    let valueToPass = ActiveMissionList[button.tag]
-//                    MissionDetails.valueActivePassed = valueToPass
-//                    MissionDetails.isActive = true
-//                }
+                if let index = sender as? Int {
+                    let CompIdToPass = sentCompCVData?.competitions?[index].id
+                    let latestSeasonYear = sentCompCVData?.competitions?[index].currentSeason?.startDate
+                    CompMatch.CompetitionId = CompIdToPass
+                    CompMatch.LatestSeasonByYear = latestSeasonYear 
+
+                }
+
                 
             }
             
