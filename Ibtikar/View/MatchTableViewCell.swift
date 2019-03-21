@@ -18,7 +18,7 @@ class MatchTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
-        self.contentView.backgroundColor = UIColor.white
+        self.contentView.backgroundColor = UIColor.darkGray
 
     }
     

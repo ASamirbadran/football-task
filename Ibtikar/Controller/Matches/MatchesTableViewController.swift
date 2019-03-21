@@ -23,6 +23,13 @@ class MatchesTableViewController: UITableViewController {
         MatchTableView.delegate = self
         MatchTableView.dataSource = self
         MatchTableView.rowHeight = 170
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            MatchTableView.rowHeight = 200
+
+        }else{
+            MatchTableView.rowHeight = 170
+
+        }
         
         MatchPresenter.attachView(self)
         MatchPresenter.getMatchList(_compId: competitionId, _season: latestSeasonByYear)
@@ -42,9 +49,10 @@ class MatchesTableViewController: UITableViewController {
     override func loadView() {
         super.loadView()
         
-        activityIndicatorView = UIActivityIndicatorView(style: .gray)
+        activityIndicatorView = UIActivityIndicatorView(style: .whiteLarge)
         
         tableView.backgroundView = activityIndicatorView
+        tableView.backgroundColor = UIColor.darkGray
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
