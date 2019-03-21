@@ -51,11 +51,19 @@ class CompetitionsCollectionViewController: UICollectionViewController,UICollect
         return 10;
     }
     
+    
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let padding: CGFloat =  45
         let collectionViewSize = collectionView.frame.size.width - padding
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return CGSize(width: collectionViewSize/3.5, height: collectionViewSize/3)
+
+        }else {
+            return CGSize(width: collectionViewSize/2, height: collectionViewSize/1.5)
+
+        }
         
-        return CGSize(width: collectionViewSize/2, height: collectionViewSize/1.5)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets{
