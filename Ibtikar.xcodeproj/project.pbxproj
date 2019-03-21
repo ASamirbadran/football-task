@@ -37,6 +37,7 @@
 		374E81682242CC53005004BC /* CusDateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374E81672242CC53005004BC /* CusDateFormat.swift */; };
 		37E9526622439F4D00B8CFB2 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E9526522439F4D00B8CFB2 /* NavigationBar.swift */; };
 		37E9526C2243C30800B8CFB2 /* Matches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E9526B2243C30700B8CFB2 /* Matches.swift */; };
+		37E9526E2243CF6E00B8CFB2 /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E9526D2243CF6E00B8CFB2 /* CustomNavBar.swift */; };
 		393DDF812240E8AF00BA64E1 /* CompetitionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DDF802240E8AF00BA64E1 /* CompetitionCollectionViewCell.swift */; };
 		393DDF852240E93200BA64E1 /* CompetitionsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DDF842240E93200BA64E1 /* CompetitionsCollectionViewController.swift */; };
 		393DDF872240E94300BA64E1 /* CompetitionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DDF862240E94300BA64E1 /* CompetitionsPresenter.swift */; };
@@ -84,6 +85,7 @@
 		374E81672242CC53005004BC /* CusDateFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CusDateFormat.swift; sourceTree = "<group>"; };
 		37E9526522439F4D00B8CFB2 /* NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		37E9526B2243C30700B8CFB2 /* Matches.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matches.swift; sourceTree = "<group>"; };
+		37E9526D2243CF6E00B8CFB2 /* CustomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
 		393DDF802240E8AF00BA64E1 /* CompetitionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionCollectionViewCell.swift; sourceTree = "<group>"; };
 		393DDF842240E93200BA64E1 /* CompetitionsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionsCollectionViewController.swift; sourceTree = "<group>"; };
 		393DDF862240E94300BA64E1 /* CompetitionsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionsPresenter.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				374E812B2242A6C1005004BC /* TableViewShadow.swift */,
 				37E9526522439F4D00B8CFB2 /* NavigationBar.swift */,
 				374E81672242CC53005004BC /* CusDateFormat.swift */,
+				37E9526D2243CF6E00B8CFB2 /* CustomNavBar.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 				374E81612242B43E005004BC /* Referees.swift in Sources */,
 				374E81602242B43E005004BC /* Filters.swift in Sources */,
 				374E815D2242B43E005004BC /* HomeTeam.swift in Sources */,
+				37E9526E2243CF6E00B8CFB2 /* CustomNavBar.swift in Sources */,
 				374E812E2242AC4E005004BC /* BuildServiceUrl.swift in Sources */,
 				39DAE7C02240E63C00A43945 /* ShadowUiView.swift in Sources */,
 				374E81632242B43E005004BC /* FullTime.swift in Sources */,
@@ -578,16 +582,18 @@
 			baseConfigurationReference = 5E644CAF65C3CEBC485397CA /* Pods-Ibtikar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D3PN8KR6TH;
+				DEVELOPMENT_TEAM = TAQT653Y7U;
 				INFOPLIST_FILE = Ibtikar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.as.task.Ibtikar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.task.Ibtikar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -598,16 +604,18 @@
 			baseConfigurationReference = DAB9D874C8921CE00EF733F1 /* Pods-Ibtikar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D3PN8KR6TH;
+				DEVELOPMENT_TEAM = TAQT653Y7U;
 				INFOPLIST_FILE = Ibtikar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.as.task.Ibtikar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.task.Ibtikar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

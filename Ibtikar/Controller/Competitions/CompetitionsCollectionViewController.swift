@@ -38,6 +38,8 @@ class CompetitionsCollectionViewController: UICollectionViewController,UICollect
 
         view.endEditing(true)
     }
+    
+    
 
     //Mark: UICollectionViewDelegateFlowLayout methods
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat

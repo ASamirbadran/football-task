@@ -271,10 +271,10 @@
             </objects>
             <point key="canvasLocation" x="1261.5999999999999" y="500.59970014992507"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Custom Nav Bar-->
         <scene sceneID="e8C-XC-mDk">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="crossDissolve" id="AsW-wT-9v8" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="crossDissolve" id="AsW-wT-9v8" customClass="CustomNavBar" customModule="Ibtikar" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="veS-hQ-Dye">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>

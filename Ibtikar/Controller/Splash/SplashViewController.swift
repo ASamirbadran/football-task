@@ -27,6 +27,8 @@ class SplashViewController: UIViewController {
         
     }
     
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SplashToHome"{
             let navVC = segue.destination as? UINavigationController
@@ -37,6 +39,7 @@ class SplashViewController: UIViewController {
     }
 
     
+    
 
 
 }
@@ -44,13 +47,16 @@ extension SplashViewController: SplashView {
 
     
     func showAlert(_message: String) {
+        DispatchQueue.main.async {
         ShowAlertUtility.DisplayAlert(title: "Error", message: _message, in: self)
-
+        }
     }
     
     func showRetryAlert(_message: String) {
-        ShowAlertUtility.DisplayRetryAlert(title: "Error", message: _message, in: self)
+        DispatchQueue.main.async {
+            ShowAlertUtility.DisplayRetryAlert(title: "Error", message: _message, in: self)
 
+        }
     }
     
     func stopLoading() {

@@ -30,7 +30,8 @@ class MatchesScreenService {
                 self.errorInresponse = false
                 let matchesResponse = response.result.value
                 self.MatchListData = matchesResponse
-                if(self.MatchListData?.matches?.count == 0){
+                //work around for unauthorized competition ids 
+                if(self.MatchListData?.count == nil){
                     self.emptyInresponse = true
                     print("empty")
                 }
