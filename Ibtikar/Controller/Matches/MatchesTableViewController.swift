@@ -15,8 +15,9 @@ class MatchesTableViewController: UITableViewController {
     var downloadedMatchCVData : MatchList?
     var activityIndicatorView: UIActivityIndicatorView!
 
-    var CompetitionId : Int!
-    var LatestSeasonByYear : String!
+    var competitionId : Int!
+    var latestSeasonByYear : String!
+    var compitionName  = "Matches"
     override func viewDidLoad() {
         super.viewDidLoad()
         MatchTableView.delegate = self
@@ -24,7 +25,7 @@ class MatchesTableViewController: UITableViewController {
         MatchTableView.rowHeight = 170
         
         MatchPresenter.attachView(self)
-        MatchPresenter.getMatchList(_compId: CompetitionId, _season: LatestSeasonByYear)
+        MatchPresenter.getMatchList(_compId: competitionId, _season: latestSeasonByYear)
         
        
 
@@ -32,6 +33,12 @@ class MatchesTableViewController: UITableViewController {
     }
 
   
+    override func viewWillAppear(_ animated: Bool) {
+        
+        self.title = compitionName
+        
+    }
+    
     override func loadView() {
         super.loadView()
         

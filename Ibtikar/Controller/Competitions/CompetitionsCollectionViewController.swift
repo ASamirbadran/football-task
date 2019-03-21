@@ -9,7 +9,7 @@
 import UIKit
 
 
-class CompetitionsCollectionViewController: UICollectionViewController,UICollectionViewDelegateFlowLayout {
+class CompetitionsCollectionViewController: UICollectionViewController,UICollectionViewDelegateFlowLayout{
     @IBOutlet var CompetitionsCV: UICollectionView!
     let searchController = UISearchController(searchResultsController: nil)
     var refreshControl = UIRefreshControl()
@@ -25,12 +25,19 @@ class CompetitionsCollectionViewController: UICollectionViewController,UICollect
         //refreshControl = UIRefreshControl()
         addSearchBar()
         competitionsPresenter.attachView(self)
-        
-
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.hideKeyBoard (_:)))
+        tapGesture.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tapGesture)
 
    
     }
 
+    
+    @objc func hideKeyBoard(_ sender: UITapGestureRecognizer){
+        navigationController?.view.endEditing(true)
+
+        view.endEditing(true)
+    }
 
     //Mark: UICollectionViewDelegateFlowLayout methods
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat
@@ -92,29 +99,6 @@ class CompetitionsCollectionViewController: UICollectionViewController,UICollect
     }
 
 
-    func addSearchBar() {
-        if #available(iOS 11.0, *) {
-            let sc = UISearchController(searchResultsController: nil)
-            //sc.delegate = self
-            let scb = sc.searchBar
-            scb.tintColor = UIColor.white
-            scb.barTintColor = UIColor.white
-            
-            if let textfield = scb.value(forKey: "searchField") as? UITextField {
-                textfield.textColor = UIColor.blue
-                if let backgroundview = textfield.subviews.first {
-                    // Background color
-                    backgroundview.backgroundColor = UIColor.white
-                    // Rounded corner
-                    backgroundview.layer.cornerRadius = 10;
-                    backgroundview.clipsToBounds = true;
-                }
-            }
-            
-            navigationItem.searchController = sc
-            navigationItem.hidesSearchBarWhenScrolling = true
-        }
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "moveToMatchScreen") {
@@ -122,8 +106,11 @@ class CompetitionsCollectionViewController: UICollectionViewController,UICollect
                 if let index = sender as? Int {
                     let CompIdToPass = sentCompCVData?.competitions?[index].id
                     let latestSeasonYear = sentCompCVData?.competitions?[index].currentSeason?.startDate
-                    CompMatch.CompetitionId = CompIdToPass
-                    CompMatch.LatestSeasonByYear = latestSeasonYear 
+                    let compName = sentCompCVData?.competitions?[index].name
+
+                    CompMatch.competitionId = CompIdToPass
+                    CompMatch.latestSeasonByYear = latestSeasonYear
+                    CompMatch.compitionName = compName ?? "Matches"
 
                 }
 
