@@ -29,6 +29,7 @@ class CompetitionsCollectionViewController: UICollectionViewController,UICollect
         tapGesture.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tapGesture)
 
+        
    
     }
 
@@ -54,7 +55,7 @@ class CompetitionsCollectionViewController: UICollectionViewController,UICollect
     }
     
     
-    
+  
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let padding: CGFloat =  45
         let collectionViewSize = collectionView.frame.size.width - padding

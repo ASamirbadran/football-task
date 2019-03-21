@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3741F6E42243F03100A81999 /* TeamsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3741F6E32243F03100A81999 /* TeamsTableViewController.swift */; };
 		374B746822415D3F00196ED0 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374B746722415D3F00196ED0 /* SplashViewController.swift */; };
 		374B746C22415D7D00196ED0 /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374B746B22415D7D00196ED0 /* SplashPresenter.swift */; };
 		374B746E22415D8C00196ED0 /* SplashService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374B746D22415D8C00196ED0 /* SplashService.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3741F6E32243F03100A81999 /* TeamsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsTableViewController.swift; sourceTree = "<group>"; };
 		374B746722415D3F00196ED0 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		374B746B22415D7D00196ED0 /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
 		374B746D22415D8C00196ED0 /* SplashService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashService.swift; sourceTree = "<group>"; };
@@ -133,6 +135,14 @@
 				DAB9D874C8921CE00EF733F1 /* Pods-Ibtikar.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		3741F6E12243F01100A81999 /* Teams */ = {
+			isa = PBXGroup;
+			children = (
+				3741F6E32243F03100A81999 /* TeamsTableViewController.swift */,
+			);
+			path = Teams;
 			sourceTree = "<group>";
 		};
 		374B746622415D2A00196ED0 /* Splash */ = {
@@ -261,6 +271,7 @@
 		39DAE7B62240E3B400A43945 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				3741F6E12243F01100A81999 /* Teams */,
 				374E812022428FFF005004BC /* Matches */,
 				374B746622415D2A00196ED0 /* Splash */,
 				393DDF822240E8FC00BA64E1 /* Competitions */,
@@ -411,6 +422,7 @@
 				374E815A2242B43E005004BC /* Season.swift in Sources */,
 				37E9526C2243C30800B8CFB2 /* Matches.swift in Sources */,
 				374E81622242B43E005004BC /* AwayTeam.swift in Sources */,
+				3741F6E42243F03100A81999 /* TeamsTableViewController.swift in Sources */,
 				374E810F22423AC6005004BC /* UrlManager.swift in Sources */,
 				39DAE7C32240E66700A43945 /* RoundedImage.swift in Sources */,
 				374E812C2242A6C1005004BC /* TableViewShadow.swift in Sources */,
