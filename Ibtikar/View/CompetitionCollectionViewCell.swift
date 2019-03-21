@@ -10,6 +10,7 @@ import UIKit
 
 class CompetitionCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var dateView: UIView!
     @IBOutlet weak var compLocation: UILabel!
     @IBOutlet weak var compName: UILabel!
     @IBOutlet weak var compStrDate: UILabel!
@@ -17,11 +18,33 @@ class CompetitionCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.UiCollectionViewShadow()
-        self.backgroundColor = UIColor.white
-
-
+        self.backgroundColor = UIColor.black
+        
     }
     
+    override var bounds: CGRect {
+        didSet {
+            self.layoutIfNeeded()
+        }
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        if #available(iOS 11.0, *) {
+            self.dateView.clipsToBounds = true
+            self.dateView.layer.cornerRadius = 10
+            self.dateView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+        } else {
+            let rectShape = CAShapeLayer()
+            rectShape.bounds = self.dateView.frame
+            rectShape.position = self.dateView.center
+            rectShape.path = UIBezierPath(roundedRect: self.dateView.bounds,    byRoundingCorners: [.bottomLeft , .bottomRight], cornerRadii: CGSize(width: 10, height: 10)).cgPath
+            self.dateView.layer.mask = rectShape
+            
+        }
+        
+    }
+
     
     
     //
@@ -47,3 +70,4 @@ class CompetitionCollectionViewCell: UICollectionViewCell {
 
     
  
+

@@ -13,7 +13,7 @@ extension UICollectionViewCell {
       
         self.clipsToBounds = false
         
-        self.layer.shadowColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.12).cgColor
+        self.layer.shadowColor = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 0.3).cgColor
         
         self.layer.shadowOpacity = 1
         self.layer.cornerRadius = 10
