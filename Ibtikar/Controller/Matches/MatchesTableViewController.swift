@@ -36,6 +36,7 @@ class MatchesTableViewController: UITableViewController {
         
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "View Teams", style: .plain, target: self, action: #selector(TeamTabbed))
+        
 
         
     }

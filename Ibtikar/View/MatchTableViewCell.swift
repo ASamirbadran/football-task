@@ -15,6 +15,8 @@ class MatchTableViewCell: UITableViewCell {
     @IBOutlet weak var MatchStatus: UILabel!
     @IBOutlet weak var SecondTeam: UILabel!
     
+    @IBOutlet weak var SecondTeamIcon: UILabel!
+    @IBOutlet weak var FirstTeamIcon: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
@@ -38,14 +40,17 @@ class MatchTableViewCell: UITableViewCell {
         
         self.groupName.text = _groupName
         self.FirstTeam.text = _FirstTeam
+        self.FirstTeamIcon.text = "\(String(_FirstTeam.prefix(1)))"
         self.MatchScore.text = "\(_MatchScoreFirstTeam) - \(_MatchScoreSecondTeam)"
         self.MatchStatus.text = _MatchStatus
         self.SecondTeam.text = _SecondTeam
+        self.SecondTeamIcon.text = "\(String(_SecondTeam.prefix(1)))"
 
         
         
     }
     
+
   
 
 }

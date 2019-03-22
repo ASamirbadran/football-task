@@ -17,7 +17,7 @@ class CompetitionsCollectionViewController: UICollectionViewController,UICollect
     var refreshControl = UIRefreshControl()
     //var sentCompCVData : CompetitionsList?
     var competitions : [Competitions]?
-    var removedArrayIndeces : [Int] = []
+    
     
 
     fileprivate let competitionsPresenter = CompetitionsPresenter(_competitionsService: CompetitionsService())
@@ -34,24 +34,9 @@ class CompetitionsCollectionViewController: UICollectionViewController,UICollect
         tapGesture.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tapGesture)
         
-//work around remove un authorized ids
-        if var Filteredcompetitions = competitions {
-            let count = Filteredcompetitions.count
-            for i in 0..<count {
-                print(i)
-                if let compId = Filteredcompetitions[i].id{
-                    if(!allowedComIds.contains(compId)){
-                        removedArrayIndeces.append(i)
-                        print("removing \(compId)")
-                    }
-                }
-                
-            }
-            Filteredcompetitions.remove(at: removedArrayIndeces)
-            competitions = Filteredcompetitions
-        }
+        //work around remove un authorized ids
+        competitionsPresenter.FilterList(OriginalCompList: competitions)
         
-
    
     }
 
@@ -182,21 +167,14 @@ class CompetitionsCollectionViewController: UICollectionViewController,UICollect
 
 
 extension CompetitionsCollectionViewController : CompetitionsView{
-
-    
-    
-}
-
-
-extension Array {
-    
-    mutating func remove(at indexs: [Int]) {
-        guard !isEmpty else { return }
-        let newIndexs = Set(indexs).sorted(by: >)
-        newIndexs.forEach {
-            guard $0 < count, $0 >= 0 else { return }
-            remove(at: $0)
-        }
+    func updateCompititonList(filteredList: [Competitions]) {
+        competitions = filteredList
     }
     
+
+    
+    
 }
+
+
+
