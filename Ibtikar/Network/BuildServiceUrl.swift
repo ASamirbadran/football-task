@@ -14,6 +14,11 @@ class BuildServiceUrl{
         return "\(competitionUrl)\(competitionId)/matches?season=\(season)"
     }
     
+    //teams for specific compition (latest season)
+    class func buildTeamsUrl(competitionId: Int ,season: String)->String{
+        return "\(competitionUrl)\(competitionId)/teams?season=\(season)"
+    }
+    
     
    
     

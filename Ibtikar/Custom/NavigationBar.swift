@@ -34,4 +34,6 @@ extension UICollectionViewController  {
             navigationItem.titleView = scb
         }
     }
+    
+    
 }

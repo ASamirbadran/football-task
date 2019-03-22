@@ -269,9 +269,7 @@
                             <outlet property="delegate" destination="I9W-Jq-MUD" id="bZ9-xm-G0Y"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Competitions" id="RLf-4l-qJ2">
-                        <barButtonItem key="backBarButtonItem" title=" " id="8XJ-ui-OLh"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Competitions" id="RLf-4l-qJ2"/>
                     <connections>
                         <outlet property="CompetitionsCV" destination="GQc-Jj-Qw7" id="rZd-wz-C5B"/>
                         <segue destination="b5j-bY-Lkb" kind="show" identifier="moveToMatchScreen" id="kpK-m3-Z84"/>
@@ -358,7 +356,7 @@
                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TeamCell" id="zLW-YT-ujV">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TeamCell" id="zLW-YT-ujV" customClass="TeamsTableViewCell" customModule="Ibtikar" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="170"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zLW-YT-ujV" id="Ypt-9N-vvj">
@@ -369,14 +367,14 @@
                                             <rect key="frame" x="10" y="10" width="355" height="150"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mexico" translatesAutoresizingMaskIntoConstraints="NO" id="1aj-o4-HIY">
-                                                    <rect key="frame" x="10" y="25" width="100" height="100"/>
+                                                    <rect key="frame" x="10" y="40" width="70" height="70"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="100" id="nQL-Mg-OI9"/>
-                                                        <constraint firstAttribute="width" constant="100" id="wjr-3E-BHR"/>
+                                                        <constraint firstAttribute="height" constant="70" id="nQL-Mg-OI9"/>
+                                                        <constraint firstAttribute="width" constant="70" id="wjr-3E-BHR"/>
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="cwE-RQ-0kG">
-                                                    <rect key="frame" x="120" y="52.333333333333343" width="175" height="45.666666666666657"/>
+                                                    <rect key="frame" x="90" y="52.333333333333343" width="205" height="45.666666666666657"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coruaitia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cb-SS-iLO">
                                                             <rect key="frame" x="0.0" y="0.0" width="68.666666666666671" height="20.333333333333332"/>
@@ -425,6 +423,11 @@
                                         </constraint>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="TeamFlag" destination="1aj-o4-HIY" id="yD7-Mo-xLc"/>
+                                    <outlet property="TeamFoundedIn" destination="HRV-gH-D2v" id="GF8-oR-2PP"/>
+                                    <outlet property="TeamName" destination="6cb-SS-iLO" id="EbP-4x-Mf9"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

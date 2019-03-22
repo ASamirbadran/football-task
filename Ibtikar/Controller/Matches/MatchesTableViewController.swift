@@ -35,14 +35,19 @@ class MatchesTableViewController: UITableViewController {
         MatchPresenter.getMatchList(_compId: competitionId, _season: latestSeasonByYear)
         
         
-        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "View Teams", style: .plain, target: self, action: #selector(TeamTabbed))
+
         
     }
     
-    
+    @objc func TeamTabbed() {
+        self.performSegue(withIdentifier: "moveToTeamsVC", sender: nil)
+        print(competitionId)
+
+    }
     override func viewWillAppear(_ animated: Bool) {
         
-        self.title = compitionName
+        self.title = "Matches for \(compitionName)"
         
     }
     
@@ -74,7 +79,6 @@ class MatchesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
-        self.performSegue(withIdentifier: "moveToTeamsVC", sender: indexPath.row)
     }
     
     
@@ -82,7 +86,13 @@ class MatchesTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "moveToTeamsVC") {
-            
+            if let CompTeam = segue.destination as? TeamsTableViewController {
+                    CompTeam.competitionId = self.competitionId
+                    CompTeam.latestSeasonByYear = self.latestSeasonByYear
+                    CompTeam.compitionName = self.compitionName
+                
+                
+            }
             
         }
         

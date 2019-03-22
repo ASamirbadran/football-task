@@ -48,7 +48,7 @@ class MatchesScreenPresenter {
                         self.matchesScreenView?.updateMatchTableData(matchData: self.matchesScreenService.MatchListData)
                         self.matchesScreenView?.stopLoading()
                     }else{
-                        self.matchesScreenView?.showAlert(_message: "No Available Competitions")
+                        self.matchesScreenView?.showAlert(_message: "No Available Matches")
                         self.matchesScreenView?.stopLoading()
                     }
                 } else {
