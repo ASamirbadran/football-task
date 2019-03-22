@@ -9,7 +9,9 @@
 import UIKit
 
 
-class CompetitionsCollectionViewController: UICollectionViewController,UICollectionViewDelegateFlowLayout{
+class CompetitionsCollectionViewController: UICollectionViewController,UICollectionViewDelegateFlowLayout,UISearchBarDelegate, UISearchResultsUpdating{
+ 
+    
     @IBOutlet var CompetitionsCV: UICollectionView!
     let searchController = UISearchController(searchResultsController: nil)
     var refreshControl = UIRefreshControl()
@@ -40,7 +42,13 @@ class CompetitionsCollectionViewController: UICollectionViewController,UICollect
         view.endEditing(true)
     }
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print ("Search text is  \(searchText)")
+    }
     
+    func updateSearchResults(for searchController: UISearchController) {
+        
+    }
 
     //Mark: UICollectionViewDelegateFlowLayout methods
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat
@@ -96,7 +104,7 @@ class CompetitionsCollectionViewController: UICollectionViewController,UICollect
             cell.compName.textColor = UIColor.green
         
         }else{
-            cell.compName.textColor = UIColor.red
+            cell.compName.textColor = UIColor(red: 208 / 255, green: 136 / 255, blue: 0 / 255, alpha: 1.0)
 
         }
     
@@ -130,6 +138,31 @@ class CompetitionsCollectionViewController: UICollectionViewController,UICollect
             
         }
         
+    }
+    func addSearchBar() {
+        let sc = UISearchController(searchResultsController: nil)
+        let scb = sc.searchBar
+        scb.delegate = self
+
+        scb.tintColor = UIColor.white
+        scb.barTintColor = UIColor.white
+        if #available(iOS 11.0, *) {
+            if let textfield = scb.value(forKey: "searchField") as? UITextField {
+                textfield.textColor = UIColor.blue
+                if let backgroundview = textfield.subviews.first {
+                    // Background color
+                    backgroundview.backgroundColor = UIColor.white
+                    // Rounded corner
+                    backgroundview.layer.cornerRadius = 10;
+                    backgroundview.clipsToBounds = true;
+                }
+            }
+            
+            navigationItem.searchController = sc
+            navigationItem.hidesSearchBarWhenScrolling = true
+        }else{
+            navigationItem.titleView = scb
+        }
     }
     
     

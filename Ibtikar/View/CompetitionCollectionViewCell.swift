@@ -10,6 +10,7 @@ import UIKit
 
 class CompetitionCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var cellBackGround: UIImageView!
     @IBOutlet weak var dateView: UIView!
     @IBOutlet weak var compLocation: UILabel!
     @IBOutlet weak var compName: UILabel!
@@ -19,7 +20,12 @@ class CompetitionCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         self.UiCollectionViewShadow()
         self.backgroundColor = UIColor.black
-        
+        self.cellBackGround.layer.cornerRadius = 10
+         self.cellBackGround.clipsToBounds = true
+
+        let RandomImages = ["comp_cell1_bg.png","comp_cell2_bg.png","comp_cell3_bg.png","comp_cell4_bg.png"]
+        let ranImg = RandomImages.randomElement()
+        self.cellBackGround.image = UIImage(named: ranImg ?? "comp_cell2_bg.png")
     }
     
     override var bounds: CGRect {

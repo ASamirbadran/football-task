@@ -19,7 +19,7 @@ class SplashService {
       let headers    = [ "X-Auth-Token" : Token ]
 
         Alamofire.request(competitionUrl, headers: headers).responseObject { (response: DataResponse<CompetitionsList>) in
-            
+            print("Competitons url : \(competitionUrl)")
             switch (response.result){
             case .failure(let error):
                 self.errorInresponse = true

@@ -42,7 +42,6 @@
 		37E8CA7A224512A500CE6786 /* Winner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E8CA77224512A400CE6786 /* Winner.swift */; };
 		37E8CA7B224512A500CE6786 /* Teams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E8CA78224512A500CE6786 /* Teams.swift */; };
 		37E8CA7D22451A4000CE6786 /* TeamsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E8CA7C22451A4000CE6786 /* TeamsTableViewCell.swift */; };
-		37E9526622439F4D00B8CFB2 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E9526522439F4D00B8CFB2 /* NavigationBar.swift */; };
 		37E9526C2243C30800B8CFB2 /* Matches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E9526B2243C30700B8CFB2 /* Matches.swift */; };
 		37E9526E2243CF6E00B8CFB2 /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E9526D2243CF6E00B8CFB2 /* CustomNavBar.swift */; };
 		393DDF812240E8AF00BA64E1 /* CompetitionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DDF802240E8AF00BA64E1 /* CompetitionCollectionViewCell.swift */; };
@@ -97,7 +96,6 @@
 		37E8CA77224512A400CE6786 /* Winner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Winner.swift; sourceTree = "<group>"; };
 		37E8CA78224512A500CE6786 /* Teams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Teams.swift; sourceTree = "<group>"; };
 		37E8CA7C22451A4000CE6786 /* TeamsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsTableViewCell.swift; sourceTree = "<group>"; };
-		37E9526522439F4D00B8CFB2 /* NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		37E9526B2243C30700B8CFB2 /* Matches.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matches.swift; sourceTree = "<group>"; };
 		37E9526D2243CF6E00B8CFB2 /* CustomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
 		393DDF802240E8AF00BA64E1 /* CompetitionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -172,6 +170,9 @@
 		374E811E2242748A005004BC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				37E8CA8022453A3D00CE6786 /* Compititions */,
+				37E8CA7F22453A3600CE6786 /* Teams */,
+				37E8CA7E22453A2C00CE6786 /* Matches */,
 				374E8114224254CC005004BC /* Competitions.swift */,
 				374E8116224254E2005004BC /* CurrentSeason.swift */,
 				374E81552242B43E005004BC /* AwayTeam.swift */,
@@ -214,6 +215,27 @@
 				374E812522429052005004BC /* MatchesScreenService.swift */,
 			);
 			path = Matches;
+			sourceTree = "<group>";
+		};
+		37E8CA7E22453A2C00CE6786 /* Matches */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Matches;
+			sourceTree = "<group>";
+		};
+		37E8CA7F22453A3600CE6786 /* Teams */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Teams;
+			sourceTree = "<group>";
+		};
+		37E8CA8022453A3D00CE6786 /* Compititions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Compititions;
 			sourceTree = "<group>";
 		};
 		393DDF822240E8FC00BA64E1 /* Competitions */ = {
@@ -269,7 +291,6 @@
 				39DAE7C22240E66700A43945 /* ShadowUicollectionCell.swift */,
 				39DAE7BF2240E63C00A43945 /* ShadowUiView.swift */,
 				374E812B2242A6C1005004BC /* TableViewShadow.swift */,
-				37E9526522439F4D00B8CFB2 /* NavigationBar.swift */,
 				374E81672242CC53005004BC /* CusDateFormat.swift */,
 				37E9526D2243CF6E00B8CFB2 /* CustomNavBar.swift */,
 			);
@@ -467,7 +488,6 @@
 				374E815B2242B43E005004BC /* Competition.swift in Sources */,
 				37E8CA79224512A500CE6786 /* TeamsList.swift in Sources */,
 				374B746E22415D8C00196ED0 /* SplashService.swift in Sources */,
-				37E9526622439F4D00B8CFB2 /* NavigationBar.swift in Sources */,
 				374E8113224254B7005004BC /* Area.swift in Sources */,
 				374B746C22415D7D00196ED0 /* SplashPresenter.swift in Sources */,
 				374E81682242CC53005004BC /* CusDateFormat.swift in Sources */,
