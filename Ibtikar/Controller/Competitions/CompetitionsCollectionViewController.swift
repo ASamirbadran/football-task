@@ -15,7 +15,10 @@ class CompetitionsCollectionViewController: UICollectionViewController,UICollect
     @IBOutlet var CompetitionsCV: UICollectionView!
     let searchController = UISearchController(searchResultsController: nil)
     var refreshControl = UIRefreshControl()
-    var sentCompCVData : CompetitionsList?
+    //var sentCompCVData : CompetitionsList?
+    var competitions : [Competitions]?
+    var removedArrayIndeces : [Int] = []
+    
 
     fileprivate let competitionsPresenter = CompetitionsPresenter(_competitionsService: CompetitionsService())
 
@@ -30,8 +33,25 @@ class CompetitionsCollectionViewController: UICollectionViewController,UICollect
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.hideKeyBoard (_:)))
         tapGesture.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tapGesture)
-
         
+//work around remove un authorized ids
+        if var Filteredcompetitions = competitions {
+            let count = Filteredcompetitions.count
+            for i in 0..<count {
+                print(i)
+                if let compId = Filteredcompetitions[i].id{
+                    if(!allowedComIds.contains(compId)){
+                        removedArrayIndeces.append(i)
+                        print("removing \(compId)")
+                    }
+                }
+                
+            }
+            Filteredcompetitions.remove(at: removedArrayIndeces)
+            competitions = Filteredcompetitions
+        }
+        
+
    
     }
 
@@ -91,23 +111,15 @@ class CompetitionsCollectionViewController: UICollectionViewController,UICollect
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return sentCompCVData?.competitions?.count ?? 0
+        return competitions?.count ?? 0
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "compititionCellId", for: indexPath) as! CompetitionCollectionViewCell
 
         let row = indexPath.row
-        let DesiredCompetition = sentCompCVData?.competitions?[row]
+        let DesiredCompetition = competitions?[row]
         cell.decorate(for: DesiredCompetition, in: self)
-        if(allowedComIds.contains(DesiredCompetition?.id ?? 0)){
-            cell.compName.textColor = UIColor.green
-        
-        }else{
-            cell.compName.textColor = UIColor(red: 208 / 255, green: 136 / 255, blue: 0 / 255, alpha: 1.0)
-
-        }
-    
         return cell
     }
     
@@ -123,9 +135,9 @@ class CompetitionsCollectionViewController: UICollectionViewController,UICollect
         if(segue.identifier == "moveToMatchScreen") {
             if let CompMatch = segue.destination as? MatchesTableViewController {
                 if let index = sender as? Int {
-                    let CompIdToPass = sentCompCVData?.competitions?[index].id
-                    let latestSeasonYear = sentCompCVData?.competitions?[index].currentSeason?.startDate
-                    let compName = sentCompCVData?.competitions?[index].name
+                    let CompIdToPass = competitions?[index].id
+                    let latestSeasonYear = competitions?[index].currentSeason?.startDate
+                    let compName = competitions?[index].name
 
                     CompMatch.competitionId = CompIdToPass
                     CompMatch.latestSeasonByYear = latestSeasonYear
@@ -172,5 +184,19 @@ class CompetitionsCollectionViewController: UICollectionViewController,UICollect
 extension CompetitionsCollectionViewController : CompetitionsView{
 
     
+    
+}
+
+
+extension Array {
+    
+    mutating func remove(at indexs: [Int]) {
+        guard !isEmpty else { return }
+        let newIndexs = Set(indexs).sorted(by: >)
+        newIndexs.forEach {
+            guard $0 < count, $0 >= 0 else { return }
+            remove(at: $0)
+        }
+    }
     
 }

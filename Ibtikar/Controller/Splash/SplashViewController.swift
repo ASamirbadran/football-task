@@ -33,7 +33,8 @@ class SplashViewController: UIViewController {
         if segue.identifier == "SplashToHome"{
             let navVC = segue.destination as? UINavigationController
              let HomeCompVC = navVC?.viewControllers.first as! CompetitionsCollectionViewController
-                HomeCompVC.sentCompCVData = downloadedCompCVData
+               // HomeCompVC.sentCompCVData = downloadedCompCVData
+                HomeCompVC.competitions = downloadedCompCVData?.competitions
             
         }
     }
