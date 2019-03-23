@@ -9,7 +9,7 @@
 import UIKit
 
 
-class CompetitionsCollectionViewController: UICollectionViewController,UICollectionViewDelegateFlowLayout,UISearchBarDelegate, UISearchResultsUpdating{
+class CompetitionsCollectionViewController: UICollectionViewController,UICollectionViewDelegateFlowLayout,UISearchBarDelegate, UISearchResultsUpdating,UISearchControllerDelegate{
  
     
     @IBOutlet var CompetitionsCV: UICollectionView!
@@ -17,6 +17,10 @@ class CompetitionsCollectionViewController: UICollectionViewController,UICollect
     var refreshControl = UIRefreshControl()
     //var sentCompCVData : CompetitionsList?
     var competitions : [Competitions]?
+    //forsearch
+    var isSearchActive  = false
+    var searchedcompetitions : [Competitions]?
+
     
     
 
@@ -36,24 +40,22 @@ class CompetitionsCollectionViewController: UICollectionViewController,UICollect
         
         //work around remove un authorized ids
         competitionsPresenter.FilterList(OriginalCompList: competitions)
-        
-   
+
     }
 
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        collectionView.reloadData()
+    }
     
     @objc func hideKeyBoard(_ sender: UITapGestureRecognizer){
         navigationController?.view.endEditing(true)
-
+        if(isSearchActive){
+        }
         view.endEditing(true)
     }
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print ("Search text is  \(searchText)")
-    }
-    
-    func updateSearchResults(for searchController: UISearchController) {
-        
-    }
 
     //Mark: UICollectionViewDelegateFlowLayout methods
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat
@@ -96,15 +98,26 @@ class CompetitionsCollectionViewController: UICollectionViewController,UICollect
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return competitions?.count ?? 0
+        if(isSearchActive){
+            return searchedcompetitions?.count ?? 0
+
+        }else{
+            return competitions?.count ?? 0
+
+        }
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "compititionCellId", for: indexPath) as! CompetitionCollectionViewCell
 
         let row = indexPath.row
-        let DesiredCompetition = competitions?[row]
-        cell.decorate(for: DesiredCompetition, in: self)
+        if(isSearchActive){
+            let DesiredCompetition = searchedcompetitions?[row]
+            cell.decorate(for: DesiredCompetition, in: self)
+        }else{
+            let DesiredCompetition = competitions?[row]
+            cell.decorate(for: DesiredCompetition, in: self)
+        }
         return cell
     }
     
@@ -127,6 +140,8 @@ class CompetitionsCollectionViewController: UICollectionViewController,UICollect
                     CompMatch.competitionId = CompIdToPass
                     CompMatch.latestSeasonByYear = latestSeasonYear
                     CompMatch.compitionName = compName ?? "Matches"
+                    
+                    isSearchActive = false
 
                 }
 
@@ -148,7 +163,7 @@ class CompetitionsCollectionViewController: UICollectionViewController,UICollect
                 textfield.textColor = UIColor.blue
                 if let backgroundview = textfield.subviews.first {
                     // Background color
-                    backgroundview.backgroundColor = UIColor(red: 85 / 255, green: 85 / 255, blue: 85 / 255, alpha: 0.7)
+                    backgroundview.backgroundColor = UIColor.lightGray
                     // Rounded corner
                     backgroundview.layer.cornerRadius = 10;
                     backgroundview.clipsToBounds = true;
@@ -160,9 +175,66 @@ class CompetitionsCollectionViewController: UICollectionViewController,UICollect
         }else{
             navigationItem.titleView = scb
         }
+        
+        self.searchController.hidesNavigationBarDuringPresentation = false
+        self.searchController.dimsBackgroundDuringPresentation = true
+        self.searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.sizeToFit()
+        searchController.searchBar.becomeFirstResponder()
+        searchController.searchBar.showsCancelButton = true
+        //self.navigationItem.searchController?.searchBar.delegate = self
+        self.definesPresentationContext = true
     }
     
+    // MARK: search bar delegate methods
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchedcompetitions?.removeAll()
+        if var Filteredcompetitions = competitions {
+            let count = Filteredcompetitions.count
+            for i in 0..<count {
+                if let compName = Filteredcompetitions[i].name{
+                    if((compName.lowercased().range(of: searchText.lowercased())) != nil){
+                       // print("Found \(searchText) in compition name is \(compName)")
+                        if (searchedcompetitions?.append(Filteredcompetitions[i])) == nil {
+                            searchedcompetitions = [Filteredcompetitions[i]]
+                        }
+                    }
+                }
+            }
+        }
+        //print("filtered array count is : \(searchedcompetitions?.count) ")
+        collectionView.reloadData()
+        
+    }
     
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        isSearchActive = true
+        collectionView.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        isSearchActive = false
+        collectionView.reloadData()
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        collectionView.reloadData()
+    }
+    func searchBarBookmarkButtonClicked(_ searchBar: UISearchBar) {
+        if !isSearchActive {
+            isSearchActive = true
+            collectionView.reloadData()
+        }
+        
+        searchController.searchBar.resignFirstResponder()
+    }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        isSearchActive = false
+
+        collectionView.reloadData()
+        
+    }
 }
 
 

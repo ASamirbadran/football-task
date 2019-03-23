@@ -40,7 +40,7 @@
                                                     <rect key="frame" x="20" y="44" width="315" height="82"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Tla-lm-wk6">
-                                                            <rect key="frame" x="0.0" y="0.6666666666666643" width="67.666666666666671" height="81"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="67.666666666666671" height="82"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flag_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="htz-Fc-mDI">
                                                                     <rect key="frame" x="4" y="0.0" width="60" height="60"/>
@@ -50,7 +50,7 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1U-gb-BAN">
-                                                                    <rect key="frame" x="32" y="63" width="3.6666666666666643" height="18"/>
+                                                                    <rect key="frame" x="32" y="63" width="3.6666666666666643" height="19"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                                     <color key="textColor" red="0.81568627449999997" green="0.53333333329999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -93,9 +93,12 @@
                                                             </subviews>
                                                         </stackView>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="Tla-lm-wk6" firstAttribute="top" secondItem="edH-zu-TCT" secondAttribute="top" id="Dch-cr-ful"/>
+                                                    </constraints>
                                                 </stackView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="P" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nuI-lv-aWm">
-                                                    <rect key="frame" x="34" y="59.666666666666671" width="40" height="30"/>
+                                                    <rect key="frame" x="34" y="59" width="40" height="30"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
