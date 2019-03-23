@@ -21,7 +21,7 @@ class TeamsTableViewCell: UITableViewCell {
         self.contentView.backgroundColor = UIColor.darkGray
     }
 
-    //
+    //Decorating Tables Cell
     func decorate(for teamCell : Teams?, in controller: TeamsTableViewController) {
         //let _TeamFlag =  teamCell?.crestUrl
         let _TeamName = teamCell?.name ?? ""

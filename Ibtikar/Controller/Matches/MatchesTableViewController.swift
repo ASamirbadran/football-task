@@ -22,6 +22,7 @@ class MatchesTableViewController: UITableViewController {
         super.viewDidLoad()
         MatchTableView.delegate = self
         MatchTableView.dataSource = self
+        //detecting Device Type.
         if UIDevice.current.userInterfaceIdiom == .pad {
             MatchTableView.rowHeight = 200
             
@@ -33,7 +34,7 @@ class MatchesTableViewController: UITableViewController {
         MatchPresenter.attachView(self)
         MatchPresenter.getMatchList(_compId: competitionId, _season: latestSeasonByYear)
         
-        
+        //adding Team Screen Button Action
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "View Teams", style: .plain, target: self, action: #selector(TeamTabbed))
 
 
@@ -42,7 +43,7 @@ class MatchesTableViewController: UITableViewController {
     
     @objc func TeamTabbed() {
         self.performSegue(withIdentifier: "moveToTeamsVC", sender: nil)
-        print(competitionId)
+        //print(competitionId)
 
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -55,7 +56,6 @@ class MatchesTableViewController: UITableViewController {
         super.loadView()
         
         activityIndicatorView = UIActivityIndicatorView(style: .whiteLarge)
-        
         tableView.backgroundView = activityIndicatorView
         tableView.backgroundColor = UIColor.darkGray
     }

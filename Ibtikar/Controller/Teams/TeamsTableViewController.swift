@@ -23,6 +23,7 @@ class TeamsTableViewController: UITableViewController {
         super.viewDidLoad()
         TeamsTableView.delegate = self
         TeamsTableView.dataSource = self
+        //detecting device Type 
         if UIDevice.current.userInterfaceIdiom == .pad {
             TeamsTableView.rowHeight = 150
             

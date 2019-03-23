@@ -21,7 +21,7 @@ class CompetitionCollectionViewCell: UICollectionViewCell {
         self.UiCollectionViewShadow()
         self.backgroundColor = UIColor.black
         self.cellBackGround.layer.cornerRadius = 10
-         self.cellBackGround.clipsToBounds = true
+        self.cellBackGround.clipsToBounds = true
 
         let RandomImages = ["comp_cell1_bg.png","comp_cell2_bg.png","comp_cell3_bg.png","comp_cell4_bg.png"]
         let ranImg = RandomImages.randomElement()
@@ -36,6 +36,8 @@ class CompetitionCollectionViewCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
+        //for CellFooterView
         if #available(iOS 11.0, *) {
             self.dateView.clipsToBounds = true
             self.dateView.layer.cornerRadius = 10
@@ -53,17 +55,15 @@ class CompetitionCollectionViewCell: UICollectionViewCell {
 
     
     
-    //
+    //Decorating Competition Cell in Home Screen
     func decorate(for compCell : Competitions?, in controller: CompetitionsCollectionViewController) {
         let name =  compCell?.name ?? ""
         let location = compCell?.area?.name ?? ""
         let startDate = compCell?.currentSeason?.startDate ?? ""
         let endDate = compCell?.currentSeason?.endDate ?? ""
         
-     
-        
         self.compName.text = name
-        self.compStrDate.text = CusDateFormat.ChangeDateFormat(date: startDate)
+        self.compStrDate.text = CusDateFormat.ChangeDateFormat(date: startDate) //Styling Date Str
         self.CompEndDate.text = CusDateFormat.ChangeDateFormat(date: endDate)
         self.compLocation.text = location
         
