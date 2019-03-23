@@ -34,9 +34,9 @@ class CompetitionsCollectionViewController: UICollectionViewController,UICollect
         //refreshControl = UIRefreshControl()
         addSearchBar()
         competitionsPresenter.attachView(self)
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.hideKeyBoard (_:)))
-        tapGesture.cancelsTouchesInView = false
-        self.view.addGestureRecognizer(tapGesture)
+        //let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.hideKeyBoard (_:)))
+        //tapGesture.cancelsTouchesInView = false
+        //self.view.addGestureRecognizer(tapGesture)
         
         //work around remove un authorized ids
         competitionsPresenter.FilterList(OriginalCompList: competitions)
@@ -49,12 +49,11 @@ class CompetitionsCollectionViewController: UICollectionViewController,UICollect
         collectionView.reloadData()
     }
     
-    @objc func hideKeyBoard(_ sender: UITapGestureRecognizer){
-        navigationController?.view.endEditing(true)
-        if(isSearchActive){
-        }
-        view.endEditing(true)
-    }
+//    @objc func hideKeyBoard(_ sender: UITapGestureRecognizer){
+//        navigationController?.view.endEditing(true)
+//        view.endEditing(true)
+//
+//    }
     
 
     //Mark: UICollectionViewDelegateFlowLayout methods
@@ -158,22 +157,25 @@ class CompetitionsCollectionViewController: UICollectionViewController,UICollect
 
         scb.tintColor = UIColor.white
         scb.barTintColor = UIColor.white
-        if #available(iOS 11.0, *) {
-            if let textfield = scb.value(forKey: "searchField") as? UITextField {
-                textfield.textColor = UIColor.blue
-                if let backgroundview = textfield.subviews.first {
-                    // Background color
-                    backgroundview.backgroundColor = UIColor.lightGray
-                    // Rounded corner
-                    backgroundview.layer.cornerRadius = 10;
-                    backgroundview.clipsToBounds = true;
-                }
+        if let textfield = scb.value(forKey: "searchField") as? UITextField {
+            textfield.textColor = UIColor.blue
+            if let backgroundview = textfield.subviews.first {
+                // Background color
+                backgroundview.backgroundColor = UIColor.lightGray
+                // Rounded corner
+                backgroundview.layer.cornerRadius = 10;
+                backgroundview.clipsToBounds = true;
             }
-            
+        }
+        
+        if #available(iOS 11.0, *) {
             navigationItem.searchController = sc
             navigationItem.hidesSearchBarWhenScrolling = true
         }else{
-            navigationItem.titleView = scb
+            navigationItem.titleView = searchController.searchBar
+            searchController.searchResultsUpdater = self
+            searchController.searchBar.delegate = self
+            
         }
         
         self.searchController.hidesNavigationBarDuringPresentation = false
@@ -182,14 +184,20 @@ class CompetitionsCollectionViewController: UICollectionViewController,UICollect
         searchController.searchBar.sizeToFit()
         searchController.searchBar.becomeFirstResponder()
         searchController.searchBar.showsCancelButton = true
-        //self.navigationItem.searchController?.searchBar.delegate = self
         self.definesPresentationContext = true
     }
     
     // MARK: search bar delegate methods
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if(searchText.isEmpty){
+            isSearchActive = false
+            collectionView.reloadData()
+        }else{
+            isSearchActive = true
+        }
         searchedcompetitions?.removeAll()
+
         if var Filteredcompetitions = competitions {
             let count = Filteredcompetitions.count
             for i in 0..<count {
@@ -209,17 +217,33 @@ class CompetitionsCollectionViewController: UICollectionViewController,UICollect
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        isSearchActive = true
+        //isSearchActive = true
         collectionView.reloadData()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
         isSearchActive = false
-        collectionView.reloadData()
     }
     
     func updateSearchResults(for searchController: UISearchController) {
+        searchedcompetitions?.removeAll()
+        if var Filteredcompetitions = competitions {
+            let count = Filteredcompetitions.count
+            for i in 0..<count {
+                if let compName = Filteredcompetitions[i].name{
+                    if((compName.lowercased().range(of: searchController.searchBar.text?.lowercased() ?? "")) != nil){
+                        // print("Found \(searchText) in compition name is \(compName)")
+                        if (searchedcompetitions?.append(Filteredcompetitions[i])) == nil {
+                            searchedcompetitions = [Filteredcompetitions[i]]
+                        }
+                    }
+                }
+            }
+        }
+        //print("filtered array count is : \(searchedcompetitions?.count) ")
         collectionView.reloadData()
+        
     }
     func searchBarBookmarkButtonClicked(_ searchBar: UISearchBar) {
         if !isSearchActive {
@@ -231,7 +255,6 @@ class CompetitionsCollectionViewController: UICollectionViewController,UICollect
     }
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         isSearchActive = false
-
         collectionView.reloadData()
         
     }

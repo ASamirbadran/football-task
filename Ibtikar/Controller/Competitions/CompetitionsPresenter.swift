@@ -29,6 +29,7 @@ class CompetitionsPresenter {
         competitionsview = nil
     }
     
+    //by removing unauthorized tocken Id
     func FilterList(OriginalCompList : [Competitions]?) {
         var removedArrayIndeces : [Int] = []
         if var Filteredcompetitions = OriginalCompList {
