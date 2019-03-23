@@ -11,6 +11,7 @@ import WebKit
 
 class TeamsTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var TeamIcon: UILabel!
     @IBOutlet weak var TeamFoundedIn: UILabel!
     @IBOutlet weak var TeamName: UILabel!
     @IBOutlet weak var TeamFlag: UIImageView!
@@ -28,6 +29,7 @@ class TeamsTableViewCell: UITableViewCell {
       
         //self.TeamFlag.text = _TeamFlag
         self.TeamName.text = _TeamName
+        TeamIcon.text = "\(String(_TeamName.prefix(2)))"
         self.TeamFoundedIn.text = "Founded In  \(String(describing: _TeamFoundedIn))"
         
     }

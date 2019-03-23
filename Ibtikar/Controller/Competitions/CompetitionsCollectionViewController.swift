@@ -148,7 +148,7 @@ class CompetitionsCollectionViewController: UICollectionViewController,UICollect
                 textfield.textColor = UIColor.blue
                 if let backgroundview = textfield.subviews.first {
                     // Background color
-                    backgroundview.backgroundColor = UIColor.white
+                    backgroundview.backgroundColor = UIColor(red: 85 / 255, green: 85 / 255, blue: 85 / 255, alpha: 0.7)
                     // Rounded corner
                     backgroundview.layer.cornerRadius = 10;
                     backgroundview.clipsToBounds = true;

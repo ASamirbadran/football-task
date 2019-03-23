@@ -22,7 +22,6 @@ class MatchesTableViewController: UITableViewController {
         super.viewDidLoad()
         MatchTableView.delegate = self
         MatchTableView.dataSource = self
-        MatchTableView.rowHeight = 170
         if UIDevice.current.userInterfaceIdiom == .pad {
             MatchTableView.rowHeight = 200
             
@@ -36,7 +35,7 @@ class MatchesTableViewController: UITableViewController {
         
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "View Teams", style: .plain, target: self, action: #selector(TeamTabbed))
-        
+
 
         
     }

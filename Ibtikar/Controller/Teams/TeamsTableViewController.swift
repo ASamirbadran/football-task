@@ -23,12 +23,11 @@ class TeamsTableViewController: UITableViewController {
         super.viewDidLoad()
         TeamsTableView.delegate = self
         TeamsTableView.dataSource = self
-        TeamsTableView.rowHeight = 170
         if UIDevice.current.userInterfaceIdiom == .pad {
-            TeamsTableView.rowHeight = 200
+            TeamsTableView.rowHeight = 150
             
         }else{
-            TeamsTableView.rowHeight = 170
+            TeamsTableView.rowHeight = 120
             
         }
         teamsPresenter.attachView(self)
